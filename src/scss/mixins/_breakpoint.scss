@@ -1,0 +1,23 @@
+/* stylelint-disable */
+/* BREAKPOINTS */
+$brp-1660: 1660px;
+$brp-1440: 1440px;
+$brp-1350: 1350px;
+$brp-1280: 1280px;
+$brp-1200: 1200px;
+$brp-1140: 1140px;
+$brp-1170: 1170px;
+$brp-1024: 1024px;
+$brp-768: 768px;
+$brp-640: 640px;
+$brp-576: 576px;
+$brp-480: 480px;
+$brp-425: 425px;
+$brp-375: 375px;
+$brp-320: 320px;
+
+@mixin breakpoint($brp) {
+  @media (min-width: $brp) {
+    @content;
+  }
+}
