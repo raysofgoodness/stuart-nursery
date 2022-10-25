@@ -31,21 +31,25 @@
     </div>
   </div>
   <div class="header__bottom">
+    <button class="close" aria-label="close menu" data-close>
+      <span class="close__line"></span>
+      <span class="close__line"></span>
+    </button>
     <div class="container header__bottom-container">
       <nav class="nav header__nav">
-        <ul class="nav-list">
-          <li class="nav-list__item">
+        <ul class="nav-list header__nav-list">
+          <li class="nav-list__item nav-list__item--home">
             <a class="nav-list__link nav-list__link--icon" href="#">
               <svg class="nav-list__icon">
                 <use xlink:href="img/sprite.svg#home"></use>
               </svg>
             </a>
           </li>
-          <li class="nav-list__item nav-list__item--sub">
+          <li class="nav-list__item nav-list__item--sub" data-sub-open>
             <a class="nav-list__link" href="#">
               Our Trees
             </a>
-            <ul class="sub-list">
+            <ul class="sub-list header__sub-list" data-sub-menu>
               <li class="sub-list__item">
                 <a class="sub-list__link" href="#">
                   Live Oak
@@ -140,7 +144,7 @@
           </li>
         </ul>
       </nav>
-      <a class="btn btn-reset" href="#">
+      <a class="btn btn-reset header__btn" href="#">
         Request a Quote
       </a>
     </div>
