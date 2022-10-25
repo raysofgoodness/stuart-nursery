@@ -1,0 +1,179 @@
+.address {
+  max-width: 195px;
+  font-size: 16px;
+  font-weight: 500;
+  color: $black-color;
+}
+
+.logo {
+  max-width: 296px;
+  display: block;
+  text-align: center;
+
+  &__picture, &__img {
+    max-width: 220px;
+  }
+
+  &__img-label {
+    margin-top: 14px;
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  &__days, &__time {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    color: $black-color;
+  }
+
+  &__phone {
+  margin-top: 6px;
+  }
+}
+
+.phone {
+  @include fluidSize(16px, 24px, 320px, $content-width, 'font-size');
+
+  display: inline-block;
+  font-weight: 700;
+}
+
+.nav {
+
+}
+
+.nav-list {
+
+  @include breakpoint($brp-1024) {
+    @include flex-v-center;
+  }
+
+  &__icon {
+    width: 18px;
+    height: 20px;
+    fill: transparent;
+    stroke: $white-color;
+  }
+
+  &__item {
+    @include breakpoint($brp-1024) {
+      @include mr(24px);
+
+      &--sub {
+        position: relative;
+
+        @include hover {
+          .sub-list {
+            transform: scale(1);
+            overflow-y: scroll;
+          }
+        }
+      }
+    }
+
+    @include breakpoint($brp-1200) {
+      @include mr(36px);
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    font-weight: 600;
+    color: $white-color;
+    text-transform: uppercase;
+    transition: all ease-in .2s;
+
+    @include hover {
+      color: $yellow-color;
+    }
+
+    &--icon {
+      @include flex-all-center;
+    }
+  }
+
+}
+
+.sub-list {
+
+  &__link {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: $white-color;
+    text-transform: uppercase;
+
+    @include hover {
+      color: $yellow-color;
+      transition: all ease-in .2s;
+    }
+  }
+
+  @include breakpoint($brp-1024) {
+    padding-bottom: 10px;
+    display: block;
+    width: 200px;
+    max-height: 300px;
+    overflow: hidden;
+    transform-origin: top center;
+    transform: scale(1,0);
+    position: absolute;
+    left: -50%;
+    background-color: $brand-color;
+    border-radius: 6px;
+    box-shadow: 6px 9px 22px -3px rgba($brand-color, 0.3);
+    transition: all 0.5s;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      background-color: #d1d1d1;
+    }
+
+    &__item {
+      @include mb(10px);
+
+      padding: 0 20px;
+
+      &:first-child {
+        padding-top: 20px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
