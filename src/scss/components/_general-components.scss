@@ -126,11 +126,13 @@
     transform-origin: top center;
     transform: scale(1,0);
     position: absolute;
+    top: 34px;
     left: -50%;
     background-color: $brand-color;
-    border-radius: 6px;
+    border-radius: 10px;
     box-shadow: 6px 9px 22px -3px rgba($brand-color, 0.3);
     transition: all 0.5s;
+    z-index: 200;
 
     &::-webkit-scrollbar {
       width: 4px;

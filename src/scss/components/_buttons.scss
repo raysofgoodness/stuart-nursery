@@ -1,0 +1,75 @@
+// brand btn
+.btn {
+  @include fluidSize(8px, 12px, 320px, $content-width, 'padding-top');
+  @include fluidSize(8px, 12px, 320px, $content-width, 'padding-bottom');
+  @include fluidSize(15px, 30px, 320px, $content-width, 'padding-left');
+  @include fluidSize(15px, 30px, 320px, $content-width, 'padding-right');
+
+  position: relative;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $yellow-color;
+  color: $second-black-color;
+  border-radius: 140px;
+  transition: all ease-in-out .4s;
+  overflow: hidden;
+  outline: none;
+
+  &:active {
+    background-color: $second-black-color;
+    color: $white-color;
+  }
+
+  &:focus {
+    background-color: $second-black-color;
+    color: $white-color;
+  }
+
+  &:disabled {
+    background-color: rgba($black-color, 0.3);
+    color: $black-color;
+
+    @include hover {
+      color: inherit;
+      cursor: not-allowed;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  @include hover {
+    color: $brand-color;
+
+    &::after{
+      content: '';
+      background: $brand-color;
+      position: absolute;
+      width: 30px;
+      height: 100px;
+      top: 0;
+      animation: slide-bar 0.4s forwards;
+      transform: rotate(30deg);
+      transform-origin: top right;
+    }
+  }
+}
+
+
+@keyframes slide-bar{
+  0%{
+    left: 0;
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    left: 110%;
+    opacity: 0;
+  }
+}
