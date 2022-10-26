@@ -1,0 +1,146 @@
+$border-radius-item: 10px;
+
+.services {
+  @include fluidSize(30px, 80px, 320px, $content-width, 'padding-top');
+  @include fluidSize(38px, 88px, 320px, $content-width, 'padding-bottom');
+
+  background-image: url("../img/services-bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__top {
+    @include fluidSize(20px, 60px, 320px, $content-width, 'margin-bottom');
+
+    text-align: center;
+
+    @include breakpoint($brp-1024) {
+      @include flex-all-sb;
+
+      align-items: flex-start;
+      text-align: unset;
+    }
+  }
+
+
+  &__description {
+    font-size: 14px;
+    font-weight: 500;
+    color: $black-color;
+    margin: 0 auto;
+
+    @include breakpoint($brp-768) {
+      max-width: 70%;
+    }
+
+    @include breakpoint($brp-1024) {
+      margin: unset;
+      padding-top: 2px;
+      font-size: 16px;
+      max-width: 580px;
+    }
+  }
+}
+
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 10px;
+
+  @include breakpoint($brp-576) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  @include breakpoint(900px) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 4;
+    background-color: $white-color;
+    border-radius: $border-radius-item;
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.15);
+
+    @include hover {
+      .services-list__img {
+        transform: scale(1.1);
+      }
+    }
+
+    @include breakpoint($brp-1024) {
+      grid-column: span 3;
+    }
+  }
+
+  &__item-inner {
+    min-height: 160px;
+    max-height: 180px;
+    overflow: hidden;
+    border-radius: $border-radius-item;
+
+    @include breakpoint($brp-768) {
+      min-height: 200px;
+      max-height: 220px;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all ease .3s;
+  }
+
+  &__item-bottom {
+    @include flex-all-sb;
+
+    @include hover {
+      .services-list__item-title {
+        color: $brand-color;
+      }
+      .services-list__item-icon {
+        transform: rotate(-90deg);
+      }
+    }
+
+    padding: 15px 22px 15px 20px;
+
+  }
+
+  &__item-title {
+    color: $second-black-color;
+    transition: all ease .3s;
+  }
+
+  &__item-icon {
+    display: block;
+    width: 16px;
+    height: 14px;
+    fill: transparent;
+    stroke: #bdbdbd;
+    transition: all ease .3s;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,6 +5,22 @@
   color: $black-color;
 }
 
+.title-l {
+  @include fluidSize(30px, 54px, 320px, $content-width, 'font-size');
+
+  font-weight: 800;
+  color: $black-color;
+}
+
+.title-s {
+  font-size: 16px;
+  font-weight: 700;
+
+  @include breakpoint($brp-768) {
+    font-size: 18px;
+  }
+}
+
 .subtitle {
   @include fluidSize(14px, 20px, 320px, $content-width, 'font-size');
 
