@@ -4,6 +4,5 @@ export const toggleShowSubmenu = () => {
 
   subOpenTrigger.addEventListener('click', () => {
     subMenu.classList.toggle('sub-list--active');
-    console.log('console');
   });
 };

@@ -1,7 +1,19 @@
 .header {
   position: relative;
   padding-top: 20px;
-  background-color: $white-color;
+
+  &--active {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $yellow-color;
+
+    & .burger {
+      &__line, &:before, &:after {
+        background-color: $black-color;
+      }
+    }
+  }
 
   &__top {
     @include flex-all-sb;
@@ -12,14 +24,32 @@
   &__bottom {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 80%;
+    left: -100%;
+    width: 0;
     height: 100vh;
+    min-height: 100%;
     background-color: $brand-color;
     z-index: 400;
+    overflow-y: auto;
+    transition: all ease .5s;
+
+    &--open {
+      left: 0;
+      width: 80%;
+    }
 
     @include breakpoint($brp-576) {
-      width: 50%;
+      &--open {
+        width: 50%;
+      }
+    }
+
+    @include breakpoint($brp-1024) {
+      padding: 8px 0;
+      position: unset;
+      height: unset;
+      width: 100%;
+      overflow-y: unset;
     }
   }
 
@@ -36,6 +66,14 @@
     }
   }
 
+  &__address, &__info {
+    display: none;
+
+    @include breakpoint($brp-1024) {
+      display: flex;
+    }
+  }
+
   &__nav-list {
     margin-bottom: 20px;
 
@@ -47,4 +85,11 @@
 }
 
 
+.burger {
+  @include burger;
+
+  @include breakpoint($brp-1024) {
+    display: none;
+  }
+}
 

@@ -1,4 +1,6 @@
-import { mobileCheck } from "./functions/mobile-check";
-console.log(mobileCheck());
+import  {burgerTrigger}  from './functions/burger';
+
+burgerTrigger();
+
 
 
