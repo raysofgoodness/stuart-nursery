@@ -1,5 +1,77 @@
 .hero {
+  @include fluidSize(30px, 80px, 320px, $content-width, 'padding-top');
+  @include fluidSize(30px, 80px, 320px, $content-width, 'padding-bottom');
+
   position: relative;
 
+  &__content {
+    padding-left: 10px;
+    max-width: 450px;
+  }
 
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    strong {
+      position: relative;
+      padding-bottom: 10px;
+
+      &:before {
+        @include pseudo;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $brand-color;
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    @include mb(16px);
+
+    font-size: 16px;
+    font-weight: 500;
+    color: $black-color;
+
+    @include breakpoint($brp-1024) {
+      @include mb(36px);
+    }
+  }
+}
+
+.hero-left, .hero-right {
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.hero-left {
+  width: 47%;
+  left: 0;
+  background-color: $white-color;
+  z-index: -1;
+}
+
+.hero-right {
+  @include image-set('../img/hero-image');
+
+  width: 53%;
+  right: 0;
+  background-color: $white-color;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+  clip-path: polygon(9% 0, 100% 0%, 100% 100%, 0% 100%);
 }
