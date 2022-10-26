@@ -6,12 +6,14 @@ export const animationHeroBlock = () => {
   const tl = gsap.timeline();
 
   function heroLoadAnimation(right) {
-    tl.from(right, {
-      duration: 3,
-      width: '0',
-      clipPath: 'polygon(9% 0, 100% 0%, 100% 100%, 0% 100%)',
-      ease: 'power4.out',
-    });
+      tl.set(right, {
+        width: '0',
+      }).to(right, {
+        duration: 3,
+        width: '52%',
+        ease: 'power4.out',
+        clipPath: 'polygon(9% 0, 100% 0%, 100% 100%, 0% 100%)',
+      });
   }
 
   function heroTextSplit(content) {
