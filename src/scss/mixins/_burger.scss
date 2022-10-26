@@ -1,0 +1,47 @@
+@mixin burger {
+  $burger-width: 30px;
+  $burger-height: 30px;
+  $burger-line-height: 4px;
+  $burger-line-radius: 3px;
+
+  position: relative;
+  border: none;
+  padding: 0;
+  width: $burger-width;
+  height: $burger-height;
+  color: #000;
+  background-color: transparent;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $burger-line-height;
+    background-color: $brand-color;
+    border-radius: $burger-line-radius;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    top: calc(100% - #{$burger-line-height});
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: $burger-line-height;
+    background-color: $brand-color;
+    border-radius: $burger-line-radius;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+  }
+}
