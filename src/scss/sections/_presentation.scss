@@ -1,0 +1,88 @@
+.presentation {
+  @include fluidSize(30px, 90px, 320px, $content-width, 'padding-top');
+  @include fluidSize(30px, 90px, 320px, $content-width, 'padding-bottom');
+  @include image-set('../img/presentation-bg');
+
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__container {
+    @include breakpoint($brp-1024) {
+      @include flex-all-sb;
+    }
+  }
+
+  &__column {
+    @include  breakpoint($brp-1024) {
+      width: 48%;
+
+      &--content {
+        padding-right: 30px;
+      }
+    }
+  }
+
+  &__title {
+    @include fluidSize(15px, 25px, 320px, $content-width, 'padding-bottom');
+  }
+
+  &__description {
+    @include mb(20px);
+    @include fluidSize(14px, 18px, 320px, $content-width, 'font-size');
+    color: $white-color;
+
+    strong {
+      @include fluidSize(18px, 24px, 320px, $content-width, 'font-size');
+
+      text-transform: uppercase;
+      color: $yellow-color;
+    }
+
+    @include breakpoint($brp-1024) {
+      @include mb(40px);
+    }
+  }
+
+  &__text {
+    @include fluidSize(20px, 40px, 320px, $content-width, 'margin-bottom');
+  }
+}
+
+.video-block {
+  position: relative;
+  height: 335px;
+
+  &__over-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 20;
+  }
+
+  &__preview {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    object-fit: fill;
+    transform: scale(.2);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.6, 0, 0.4, 1);
+    pointer-events: none;
+    z-index: 30;
+
+    &--active {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+  }
+}
+

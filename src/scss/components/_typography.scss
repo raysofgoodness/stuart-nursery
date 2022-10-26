@@ -12,6 +12,13 @@
   color: $black-color;
 }
 
+.title-m {
+  @include fluidSize(20px, 44px, 320px, $content-width, 'font-size');
+
+  font-weight: 800;
+  color: $white-color;
+}
+
 .title-s {
   font-size: 16px;
   font-weight: 700;
