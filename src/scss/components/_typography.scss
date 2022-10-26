@@ -1,0 +1,13 @@
+.title-xl {
+  @include fluidSize(26px, 50px, 320px, $content-width, 'font-size');
+
+  font-weight: 800;
+  color: $black-color;
+}
+
+.subtitle {
+  @include fluidSize(14px, 20px, 320px, $content-width, 'font-size');
+
+  font-weight: 700;
+  color: $brand-color;
+}
