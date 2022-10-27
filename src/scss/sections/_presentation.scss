@@ -52,6 +52,13 @@
 .video-block {
   position: relative;
   height: 335px;
+  cursor: pointer;
+
+  @include hover {
+    .video-block__play {
+      border-color: transparent transparent transparent $black-color;
+    }
+  }
 
   &__over-image {
     display: block;
@@ -64,6 +71,12 @@
     height: 100%;
     object-fit: cover;
     z-index: 20;
+    transition: all 0.6s cubic-bezier(0.6, 0, 0.4, 1);
+
+    &--active {
+      opacity: 0;
+      transform: scale(.2);
+    }
   }
 
   &__preview {
@@ -76,7 +89,7 @@
     opacity: 0;
     transition: all 0.6s cubic-bezier(0.6, 0, 0.4, 1);
     pointer-events: none;
-    z-index: 30;
+    z-index: 40;
 
     &--active {
       opacity: 1;
@@ -84,5 +97,23 @@
       pointer-events: auto;
     }
   }
-}
 
+  &__play {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-style: solid;
+    border-width: 24px 0 24px 38px;
+    border-color: transparent transparent transparent $white-color;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+    transition: all 0.7s cubic-bezier(0.6, 0, 0.4, 1);
+
+    &--active {
+      opacity: 0;
+      border-width: 0 0 0 0;
+    }
+  }
+}
