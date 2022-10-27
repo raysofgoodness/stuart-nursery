@@ -14,17 +14,24 @@
   }
 
   &__column {
+    &--content {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
     @include  breakpoint($brp-1024) {
       width: 48%;
 
       &--content {
+        margin-bottom: unset;
         padding-right: 30px;
+        text-align: unset;
       }
     }
   }
 
   &__title {
-    @include fluidSize(15px, 25px, 320px, $content-width, 'padding-bottom');
+    @include fluidSize(15px, 25px, 320px, $content-width, 'margin-bottom');
   }
 
   &__description {
@@ -45,19 +52,37 @@
   }
 
   &__text {
-    @include fluidSize(20px, 40px, 320px, $content-width, 'margin-bottom');
+    margin: 0 auto 20px auto;
+
+    @include breakpoint($brp-768) {
+      max-width: 70%;
+    }
+
+    @include breakpoint($brp-1024) {
+      max-width: 100%;
+      margin: 0 0 40px 0;
+    }
   }
 }
 
 .video-block {
+  @include fluidSize(200px, 335px, 320px, $content-width, 'height');
+  @include fluidSize(6px, 20px, 320px, $content-width, 'border-width');
+
   position: relative;
-  height: 335px;
   cursor: pointer;
+  border-style: solid;
+  border-color: $white-color;
+  overflow: hidden;
 
   @include hover {
     .video-block__play {
       border-color: transparent transparent transparent $black-color;
     }
+  }
+
+  @include breakpoint($brp-768) {
+
   }
 
   &__over-image {
@@ -80,10 +105,10 @@
   }
 
   &__preview {
+    @include fluidSize(200px, 335px, 320px, $content-width, 'height');
+
     position: absolute;
     min-width: 100%;
-    min-height: 100%;
-    overflow: hidden;
     object-fit: fill;
     transform: scale(.2);
     opacity: 0;
