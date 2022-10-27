@@ -1,0 +1,13 @@
+.favorites {
+  @include fluidSize(20px, 60px, 320px, $content-width, 'padding-top');
+  @include fluidSize(40px, 80px, 320px, $content-width, 'padding-bottom');
+
+  background-color: $white-color;
+
+  &__title {
+    @include fluidSize(15px, 50px, 320px, $content-width, 'margin-bottom');
+
+    text-align: center;
+    color: $second-black-color;
+  }
+}
