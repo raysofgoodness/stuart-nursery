@@ -1,11 +1,11 @@
 .favorites-card {
-  @include fluidSize(280px, 410px, 320px, $content-width, 'min-height');
+  @include fluidSize(220px, 355px, 320px, $content-width, 'min-height');
 
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25%;
+  width: auto;
   padding: 20px 20px 10px 20px;
   background-color: #eee;
   border-radius: 10px;
@@ -104,9 +104,13 @@
 
   &__bottom {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     margin-top: auto;
     margin-bottom: 0;
     width: 100%;
+    overflow-x: hidden;
     transition: all cubic-bezier(0, 0, 1, 1) 0.3s;
     z-index: 30;
 
@@ -140,7 +144,9 @@
 
   &__link {
     font-size: 14px;
-    min-width: 100%;
+    min-width: unset;
+    max-width: 100%;
+    width: auto;
 
     @include breakpoint($brp-1024) {
       font-size: 16px;

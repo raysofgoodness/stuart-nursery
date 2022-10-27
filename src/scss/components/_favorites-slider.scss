@@ -1,0 +1,17 @@
+.favorites-slider {
+  .swiper-slide {
+    width: 100%;
+  }
+
+  @include breakpoint($brp-768) {
+    .swiper-slide {
+      width: 50%;
+    }
+  }
+
+  @include breakpoint($brp-1024) {
+    .swiper-slide {
+      width: 25%;
+    }
+  }
+}
