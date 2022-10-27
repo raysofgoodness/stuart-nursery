@@ -22,6 +22,7 @@ html {
   min-width: 320px;
   min-height: 100%;
   font-size: 16px;
+  cursor: none;
 }
 
 img {
@@ -54,7 +55,6 @@ h1, h2, h3, h4, h5, h6, p, ul, li, span, td, tr, th, strong, b {
   border: none;
   padding: 0;
   background: transparent;
-  cursor: pointer;
 }
 
 .list-reset {
@@ -116,3 +116,70 @@ h1, h2, h3, h4, h5, h6, p, ul, li, span, td, tr, th, strong, b {
 .page--ios .dis-scroll {
   position: relative;
 }
+
+@include breakpoint($brp-1024) {
+  .cursor {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $brand-color;
+    border-radius: 50%;
+    position: absolute;
+    transition: all ease-out 0.2s;
+    animation: cursorAnim .5s infinite alternate;
+    z-index: 200;
+    pointer-events: auto;
+
+    &::after {
+      @include pseudo;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      border: 8px solid $yellow-color;
+      border-radius: 50%;
+      opacity: 0.5;
+      top: -6px;
+      left: -6px;
+      animation: cursorAnim2 .5s infinite alternate;
+    }
+  }
+
+  .expand {
+    animation: cursorTouch .5s forwards;
+    border: 1px solid $yellow-color;
+  }
+}
+
+
+@keyframes cursorAnim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(.7);
+  }
+}
+
+@keyframes cursorAnim2 {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(.4);
+  }
+}
+
+@keyframes cursorTouch {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+
+

@@ -70,7 +70,6 @@
   @include fluidSize(6px, 20px, 320px, $content-width, 'border-width');
 
   position: relative;
-  cursor: pointer;
   border-style: solid;
   border-color: $white-color;
   overflow: hidden;

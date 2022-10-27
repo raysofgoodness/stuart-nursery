@@ -11,8 +11,8 @@ const swiper = new Swiper(`.favorites-slider`, {
   slidesPerView: 1,
   spaceBetween: 0,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.favorites__btn-next',
+    prevEl: '.favorites__btn-prev',
   },
   breakpoints: {
     768: {
