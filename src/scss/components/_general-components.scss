@@ -119,6 +119,19 @@
     &--sub {
       position: relative;
       z-index: 600;
+
+      &:before {
+        @include pseudo;
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 8px;
+        right: -16px;
+        border-style: solid;
+        border-width: 6px 4px 0 4px;
+        border-color: #ffffff transparent transparent transparent;
+        transition: all ease-out .4s;
+      }
     }
 
     @include breakpoint($brp-1024) {
@@ -131,6 +144,10 @@
 
       &--sub {
         @include hover {
+          &:before {
+            transform:rotate(-90deg);
+          }
+
           .sub-list {
             transform: scale(1);
             overflow-y: scroll;
@@ -280,7 +297,13 @@
   }
 }
 
+.curzr {
+  display: none;
 
+  @include breakpoint($brp-1024) {
+    display: block;
+  }
+}
 
 
 
