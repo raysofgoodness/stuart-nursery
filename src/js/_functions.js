@@ -9,7 +9,7 @@ Swiper.use([Navigation]);
 
 const swiper = new Swiper(`.favorites-slider`, {
   slidesPerView: 1,
-  spaceBetween: 0,
+  spaceBetween: 5,
   navigation: {
     nextEl: '.favorites__btn-next',
     prevEl: '.favorites__btn-prev',
