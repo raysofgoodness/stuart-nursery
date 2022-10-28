@@ -1,0 +1,29 @@
+.join {
+  @include fluidSize(20px, 50px, 320px, $content-width, 'padding-top');
+  @include fluidSize(30px, 60px, 320px, $content-width, 'padding-bottom');
+
+  background-image: url("../img/services-bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__title {
+    @include fluidSize(20px, 50px, 320px, $content-width, 'padding-bottom');
+
+    margin: 0 auto;
+    max-width: 850px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: $black-color;
+    text-align: center;
+
+    strong {
+      font-weight: 700;
+      color: #a9d16a;
+    }
+
+    @include breakpoint($brp-1024) {
+      max-width: 850px;
+    }
+  }
+}
