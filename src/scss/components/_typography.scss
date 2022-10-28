@@ -28,6 +28,11 @@
   }
 }
 
+.title-xs {
+  font-size: 16px;
+  font-weight: 700;
+}
+
 .subtitle {
   @include fluidSize(14px, 20px, 320px, $content-width, 'font-size');
 
