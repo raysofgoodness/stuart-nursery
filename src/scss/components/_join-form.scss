@@ -19,16 +19,20 @@
 
   &__label {
     display: block;
-    width: 72%;
+    width: 90%;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
+
+    @include breakpoint($brp-768) {
+      width: 72%;
+    }
   }
 
   &__input {
     @include fluidSize(14px, 18px, 320px, $content-width, 'font-size');
 
     display: block;
-    padding: 16px 30px;
+    padding: 14px 24% 14px 20px;
     font-weight: 500;
     width: 100%;
     height: 100%;
@@ -48,6 +52,10 @@
       @include fluidSize(14px, 18px, 320px, $content-width, 'font-size');
       font-weight: 500;
       color: #4b4b4b;
+    }
+
+    @include breakpoint($brp-768) {
+      padding: 16px 30px;
     }
   }
 
