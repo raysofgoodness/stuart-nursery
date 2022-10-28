@@ -1,0 +1,18 @@
+.review {
+  @include fluidSize(20px, 60px, 320px, $content-width, 'padding-top');
+  padding-bottom: 80px;
+
+  @include image-set('../img/review-slider');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $brand-color;
+
+  @include breakpoint($brp-1024) {
+    padding-bottom: 80px;
+  }
+
+  &__container {
+    position: relative;
+  }
+}

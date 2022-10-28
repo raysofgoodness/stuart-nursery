@@ -1,12 +1,7 @@
 .favorites {
   @include fluidSize(20px, 60px, 320px, $content-width, 'padding-top');
-  padding-bottom: 60px;
-
+  padding-bottom: 80px;
   background-color: $white-color;
-
-  @include breakpoint($brp-1024) {
-    padding-bottom: 80px;
-  }
 
   &__container {
     position: relative;
@@ -21,7 +16,7 @@
 
   &__btn-prev, &__btn-next {
     position: absolute;
-    bottom: -16%;
+    bottom: -18%;
 
     svg {
       width: 16px;
@@ -34,6 +29,10 @@
         fill: $black-color;
         opacity: 0.1;
       }
+    }
+
+    @include breakpoint($brp-768) {
+      bottom: -14%;
     }
 
     @include breakpoint($brp-1280) {

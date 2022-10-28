@@ -1,0 +1,44 @@
+.review-slider {
+  width: 88%;
+}
+
+.review {
+  &__btn-prev, &__btn-next {
+    position: absolute;
+    bottom: -20%;
+
+    svg {
+      width: 16px;
+      height: 27px;
+      fill: $white-color;
+    }
+
+    &.swiper-button-disabled {
+      svg {
+        fill: $black-color;
+        opacity: 0.1;
+      }
+    }
+
+    @include breakpoint($brp-1280) {
+      top: 60%;
+      bottom: unset;
+    }
+  }
+
+  &__btn-prev {
+    left: 40%;
+
+    @include breakpoint($brp-1280) {
+      left: -2px;
+    }
+  }
+
+  &__btn-next {
+    right: 40%;
+
+    @include breakpoint($brp-1280) {
+      right: -2px;
+    }
+  }
+}

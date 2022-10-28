@@ -7,7 +7,7 @@ animationHeroBlock();
 import Swiper, {Navigation} from 'swiper';
 Swiper.use([Navigation]);
 
-const swiper = new Swiper(`.favorites-slider`, {
+const favoriteSlider = new Swiper(`.favorites-slider`, {
   slidesPerView: 1,
   spaceBetween: 5,
   navigation: {
@@ -24,6 +24,17 @@ const swiper = new Swiper(`.favorites-slider`, {
       spaceBetween: 10,
     },
   }
+});
+
+const reviewSlider = new Swiper(`.review-slider`, {
+  slidesPerView: 1,
+  spaceBetween: 5,
+  loop: true,
+  speed: 800,
+  navigation: {
+    nextEl: '.review__btn-next',
+    prevEl: '.review__btn-prev',
+  },
 });
 
 
